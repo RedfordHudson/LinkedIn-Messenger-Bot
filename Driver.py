@@ -113,7 +113,7 @@ class Driver():
 
         # submit
         send_btn = message_container[2].find_element(By.CSS_SELECTOR,'button.msg-form__send-button')
-        # send_btn.click()      
+        send_btn.submit()      
 
 if __name__=='__main__':
     driver = Driver()

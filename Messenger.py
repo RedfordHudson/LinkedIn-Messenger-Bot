@@ -21,7 +21,7 @@ May I have 10 minutes of your time to interview you about your experiences as %s
     def message(self):
         links = pd.read_csv(self.csv_file)
 
-        for row in links.iterrows():
+        for row in links[:5].iterrows():
             link = row[1]['name']
             self.driver.message(link,self.subject_msg,self.body_msg)
 
@@ -31,7 +31,7 @@ May I have 10 minutes of your time to interview you about your experiences as %s
 if __name__=='__main__':
     messenger = Messenger('links.csv')
 
-    # messenger.loadCSV('restaurant',2)
+    # messenger.loadCSV('restaurant',4)
 
     messenger.message()
 
